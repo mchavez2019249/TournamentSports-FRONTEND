@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\git\TournamentSports-FRONTEND\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\PABLO ALEMAN\Documents\2021\GESTION DE TORNEOS\TournamentSports-FRONTEND\src\polyfills.ts */"hN/g");
 
 
 /***/ }),

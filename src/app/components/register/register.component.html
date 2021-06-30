@@ -10,22 +10,22 @@
             <img class="mb-4" width="100" height="100" src="../../../assets/img/programmer.png" alt="logoProfile">
             <h1 class="h3 mb-3 font-weight-normal">Create your account</h1>
             <div class="form-group">
-                <label for="inputName">Name</label>
+                <label class="form-label" for="inputName">Name</label>
                 <input [(ngModel)]="user.name" name="name" #name="ngModel" class="form-control" type="text" id="inputName" placeholder="your name" required>
                 <span *ngIf="!name.valid && name.touched">
                     Campo obligatorio
                 </span>
             </div>  
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputUsername">Username</label>
+                <div class="form-group">
+                    <label class="form-label" for="inputUserName">Username</label>
                     <input [(ngModel)]="user.username" name="username" #username="ngModel" class="form-control" type="text" id="inputUsername" placeholder="username" required>
                     <span *ngIf="!username.valid && username.touched">
                         Campo obligatorio
                     </span>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword">Password</label>
+                <div class="form-group">
+                    <label class="form-label" for="inputPassword">Password</label>
                     <input [(ngModel)]="user.password" name="password" #password="ngModel" class="form-control" type="password" id="inputPassword" placeholder="password" required>
                     <span *ngIf="!password.valid && password.touched">
                         Campo obligatorio

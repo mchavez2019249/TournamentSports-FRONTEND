@@ -14,4 +14,16 @@
     max-width: 640px;
     padding: 15px;
     margin: auto;
+    align-items: center;
 }
+ .form-label{
+     color: white;
+ }
+
+ .form-check-label{
+    color: white;
+ }
+
+ #h3{
+    color:white;
+ }

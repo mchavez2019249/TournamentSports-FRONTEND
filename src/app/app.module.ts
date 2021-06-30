@@ -10,6 +10,7 @@ import { LeaguesComponent } from './components/leagues/leagues.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { UserComponent } from './components/user/user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LeaguesComponent,
     TeamsComponent,
     UserComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+.container1{
+    background-image: url('../../../assets/img/background.jpg');
+}
+
+.card-body{
+    color: rgb(22, 22, 22);
+}
+
+.text-center{
+    color: rgb(233, 17, 82);
+}
+
+.card-title{
+    color: rgb(233, 17, 82);
+}
+
+.row{
+    color: rgb(233, 17, 82);
+    margin-top: -4%;
+}
+.texto{
+    color: rgb(14, 14, 13);
+}
+
+.bg-image{
+    margin-top: 5rem;
+}
+
+.row .texto{
+    margin-top: 10%;
+   font-size: 140%;
+}

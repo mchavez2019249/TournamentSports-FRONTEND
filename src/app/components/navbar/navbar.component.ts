@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit, DoCheck  {
   logOut(){
     localStorage.clear();
     this.token = null;
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('login');
   }
 
   eliminarUsername(){

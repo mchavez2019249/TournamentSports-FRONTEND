@@ -16,8 +16,8 @@ import { UserComponent } from './components/user/user.component';
 //users
 const routes: Routes = [
   //importacion de componentes
-  {path: '', component: HomeComponent}, //un solo uso | va a ser la primer ruta que se mostrará (primer componente)
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', component: LoginComponent}, //un solo uso | va a ser la primer ruta que se mostrará (primer componente)
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   //home
  {path: 'home', component: HomeComponent},
  //login

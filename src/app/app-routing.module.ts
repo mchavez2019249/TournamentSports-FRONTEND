@@ -12,7 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 //team
 
 //user
-
+import { UserComponent } from './components/user/user.component';
 //users
 const routes: Routes = [
   //importacion de componentes
@@ -29,7 +29,7 @@ const routes: Routes = [
  //team
 
  //user
-
+ {path: 'user', component: UserComponent},
  //users
 
   {path: '**', component: NotFoundComponent}

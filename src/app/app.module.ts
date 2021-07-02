@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { ListUsersComponent } from './components/list-users/list-users.component';
-
+import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { ListUsersComponent } from './components/list-users/list-users.component
     NavbarComponent,
     NotFoundComponent,
     SearchPipe,
-    ListUsersComponent
+    ListUsersComponent,
+    ListTorneosComponent
   ],
   imports: [
     BrowserModule,

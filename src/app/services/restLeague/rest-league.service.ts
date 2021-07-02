@@ -1,0 +1,76 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CONNECTION } from '../global';
+import { map } from 'rxjs/operators';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RestLeagueService {
+  public uri: string;
+  public httOptionsAuth = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+  public token;
+  public league;
+  private extractData(res: Response){
+    let body = res;
+    return body || [] || {};
+  }
+
+
+  constructor(private http:HttpClient) { 
+    this.uri = CONNECTION.URI;
+  }
+
+  test(){
+    return 'Mensaje desde el servicio'
+  }
+
+  getToken(){
+    let token = localStorage.getItem('token');
+    if(token != null || token != undefined){
+      this.token = token;
+    }else{
+      this.token = null;
+    }
+    return this.token;
+  }
+
+  getLeague(){
+    let league = JSON.parse(localStorage.getItem('league'));
+    if(league != null || league != undefined){
+      this.league = league;
+    }else{
+      this.league = null;
+    }
+    return this.league;
+  }
+
+  saveLeague(league){
+    let params = JSON.stringify(league);
+    return this.http.post(this.uri + 'saveLeague', params, this.httOptionsAuth)
+    .pipe(map(this.extractData));
+  }
+
+  deteleLeague(idLeague, password){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    })
+    return this.http.put(this.uri+'deleteLeague/'+idLeague, {password: password}, {headers: headers})
+    .pipe(map(this.extractData))
+  }
+
+  getLeagues(){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    });
+    return this.http.get(this.uri+ 'getLeagues', {headers: headers})
+    .pipe(map(this.extractData))
+  }
+}

@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div id="cards">
+    <h1 class="text-center">Torneos Registrados</h1>
+    <br>
+        <form class="form-inline justify-content-center">
+            <div class="form-group">
+                <input [(ngModel)]="search" name="search" class="form-control-lg" type="search" placeholder="Search by name" aria-label="Search">
+            </div>
+        </form>
+    <hr>
+    <div class="card myWidth text-white bg-secondary" *ngFor="let league of leagues | search:search">
+        <div class="card-body">
+            <h5 class="card-title">{{league.name}}</h5>
+        </div>
+    </div>
+      <!--INICIO SAVE-->
+      <!-- Button trigger modal -->
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Save league
+              </button>
+          </div>
+        </div>
+      </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white d-flex justify-content-center">
+          <h5 class="modal-title" id="exampleModalLabel">Save a New League</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--cuerpo-->
+          <form  class="form-signin" #createLeague = "ngForm" (ngSubmit) = "onSubmit(createLeague)">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name League</label>
+                <input type="league" class="form-control" id="exampleFormControlInput1" placeholder="name">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!createLeague.form.valid">SAVE</button >
+              </div>
+          </form>
+          <!-- fin cuerpo-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--FIN SAVE-->
+
+</div>

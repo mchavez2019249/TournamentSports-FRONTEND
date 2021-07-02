@@ -13,11 +13,12 @@ import { RegisterComponent } from './components/register/register.component';
 
 //user
 import { UserComponent } from './components/user/user.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
 //users
 const routes: Routes = [
   //importacion de componentes
   {path: '', component: LoginComponent}, //un solo uso | va a ser la primer ruta que se mostrará (primer componente)
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   //home
  {path: 'home', component: HomeComponent},
  //login
@@ -30,6 +31,7 @@ const routes: Routes = [
 
  //user
  {path: 'user', component: UserComponent},
+ {path: 'listUsers', component:ListUsersComponent},
  //users
 
   {path: '**', component: NotFoundComponent}

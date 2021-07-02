@@ -13,6 +13,9 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { UserComponent } from './components/user/user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
+import { SearchPipe } from './pipes/search.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     TeamsComponent,
     UserComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ListUsersComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

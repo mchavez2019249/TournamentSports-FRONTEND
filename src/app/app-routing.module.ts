@@ -31,7 +31,8 @@ const routes: Routes = [
 
  //user
  {path: 'user', component: UserComponent},
- {path: 'listUsers', component:ListUsersComponent},
+ {path: 'listUsers', component: ListUsersComponent},
+ 
  //users
 
   {path: '**', component: NotFoundComponent}

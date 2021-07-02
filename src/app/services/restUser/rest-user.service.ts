@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CONNECTION } from '../global';
 import { map } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class RestUserService {
   public uri: string;
-  public httOptions = {
+  public httOptionsAuth = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      
     })
   };
   public token;
@@ -52,7 +52,7 @@ export class RestUserService {
 
   saveUser(user){
     let params = JSON.stringify(user);
-    return this.http.post(this.uri + 'saveUser', params, this.httOptions)
+    return this.http.post(this.uri + 'saveUser', params, this.httOptionsAuth)
     .pipe(map(this.extractData));
   }
 
@@ -69,7 +69,7 @@ export class RestUserService {
   login(user, tokenStatus){
     user.gettoken = tokenStatus;
     let params = JSON.stringify(user);
-    return this.http.post(this.uri+'login', params, this.httOptions)
+    return this.http.post(this.uri+'login', params, this.httOptionsAuth)
     .pipe(map(this.extractData))
   }
 
@@ -103,11 +103,7 @@ export class RestUserService {
   }
 
   getUsers(){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.getToken()
-    });
-    return this.http.get(this.uri+ 'getUsers', {headers: headers})
+    return this.http.get(this.uri+ '/getUsers')
     .pipe(map(this.extractData))
   }
 }

@@ -9,6 +9,7 @@
         </form>
     <hr>
     <div class="card myWidth text-white bg-secondary" *ngFor="let league of leagues | search:search">
+      <img src="../../../assets/img/soccer-player.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
         </div>
@@ -38,7 +39,7 @@
           <form  class="form-signin" #createLeague = "ngForm" (ngSubmit) = "onSubmit(createLeague)">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name League</label>
-                <input type="league" class="form-control" id="exampleFormControlInput1" placeholder="name">
+                <input [(ngModel)]="league.name"  name="name" #name="ngModel" class="form-control" type="text" id="inputName" placeholder="League name" required>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>

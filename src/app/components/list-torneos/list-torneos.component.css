@@ -1,0 +1,32 @@
+#cards{
+    margin: 1rem;
+    margin-top:-1.2%;
+    align-items: center;
+
+}
+
+.myWidth{
+    width: 19rem;
+    display: inline-flex;
+    margin: 0.5rem;
+    margin-top: 1rem;
+    align-items: center;
+    background-color: rgb(159, 163, 154);
+}
+
+#botonesCrud{
+    margin: 0.15rem;
+}
+
+.body{
+    background-image: url("../../../assets/img/1884567.jpg");
+}
+
+#encabezado{
+    background-color: rgb(216, 3, 67);
+}
+
+.h1{
+    color: white;
+    font-family: "Impact";
+}

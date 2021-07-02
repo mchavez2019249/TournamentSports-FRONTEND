@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestLeagueService } from '../../services/restLeague/rest-league.service';
+import { RestUserService } from '../../services/restUser/rest-user.service';
 import { League } from '../../models/league.model';
 import { Router } from '@angular/router';
 import { CONNECTION } from 'src/app/services/global';
@@ -21,8 +22,9 @@ export class ListTorneosComponent implements OnInit {
   public message;
   public status:boolean;
   public uri;
+  public user;
 
-  constructor(private restLeague:RestLeagueService,private router:Router) {
+  constructor(private restLeague:RestLeagueService, private restUser:RestUserService,private router:Router) {
     this.title = 'Your League';
     this.league = new League('','',[],[]);
     this.token = this.restLeague.getToken();
@@ -33,11 +35,13 @@ export class ListTorneosComponent implements OnInit {
 
   ngOnInit(): void {
     this.listLeagues();
+    this.token = this.restUser.getToken();
+    this.user = this.restUser.getUser();
   }
 
   onSubmit(createLeague){
-    this.restLeague.saveLeague(this.league).subscribe((res:any)=>{
-      if(res.leagueSaved){
+    this.restLeague.saveLeague(this.user._id, this.league).subscribe((res:any)=>{
+      if(res.savedL){
         alert(res.message);
         this.league = new League('', '',null, null);
         createLeague.reset();
@@ -65,9 +69,9 @@ export class ListTorneosComponent implements OnInit {
 
   listLeagues(){
     this.restLeague.getLeagues().subscribe((res:any)=>{
-      if(res.leagues){
-        this.leagues = res.leagues;
-        console.log('Ligas cargadas')
+      if(res.leagueFind){
+        this.leagues = res.leagueFind;
+        console.log(this.leagues)
       }else{
         alert(res.message)
       }

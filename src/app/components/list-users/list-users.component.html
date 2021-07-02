@@ -1,14 +1,21 @@
 <app-navbar></app-navbar>
-<div id="cards">
-    <h1 class="text-center">USUARIOS</h1>
-    <hr>
-    <div class="card" style="width: 15rem;" *ngFor="let user of users">
-        <img src="../../../assets/img/user.png" class="card-img-top" alt=".">
-        <div class="card-body">
-          <h5 class="card-title">{{user.name}}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+ <div id="encabezado">
+    <h1 class="text-center h1">USUARIOS</h1>
+ </div>
+
+<div class="body">
+    <div id="cards">
+        
+        <hr>
+        <div class="card myWidth" *ngFor="let user of users">
+            <img src="../../../assets/img/soccer-player.png" width="100rem" height="100rem" class="img-fluid" alt=".">
+            <div class="card-body">
+              <h5 class="card-title">{{user.name}}</h5>
+              <p class="card-text">{{user.username}}</p>
+              <a id="botonesCrud" href="#" class="btn btn-success">Update</a> <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+    </div>
 </div>
+
 

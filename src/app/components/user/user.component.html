@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div id="body" class="text-center" [@fadeIn]>
-  <form class="form-signin" #updateUser="ngForm" (ngSubmit)="onSubmit()">
+  <form class="form-signin" #userUpdate="ngForm" (ngSubmit)="onSubmit()">
       <div class="alert alert-danger" role="alert"  *ngIf="status == false">
           Message: {{message}}
         </div>
@@ -33,7 +33,7 @@
               </label>
           </div>
       </div>
-      <button type="submit" class="btn btn-success col-lg-3 mx-2" [disabled]="!updateUser.form.valid">
+      <button type="submit" class="btn btn-success col-lg-3 mx-2" [disabled]="!userUpdate.form.valid">
           Update
       </button>
       <button type="button" class="btn btn-danger col-lg-3 mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">

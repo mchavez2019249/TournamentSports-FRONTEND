@@ -4,11 +4,13 @@ import { RestUserService } from '../../services/restUser/rest-user.service';
 import { UploadUserService } from 'src/app/services/uploadUser/upload-user.service';
 import { Router } from '@angular/router';
 import { CONNECTION } from 'src/app/services/global';
+import { fadeIn } from 'src/app/animations/animations';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  animations: [fadeIn]
 })
 export class UserComponent implements OnInit {
   public title;

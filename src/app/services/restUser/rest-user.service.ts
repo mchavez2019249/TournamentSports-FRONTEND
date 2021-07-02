@@ -56,7 +56,7 @@ export class RestUserService {
     .pipe(map(this.extractData));
   }
 
-  saveUserByAdmin(user, idAdmin){
+  /*saveUserByAdmin(user, idAdmin){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
@@ -64,7 +64,7 @@ export class RestUserService {
     let params = JSON.stringify(user);
     return this.http.post(this.uri + 'saveUserOnlyAdmin/'+idAdmin, params, {headers:headers})
       .pipe(map(this.extractData));
-  }
+  }*/
 
   login(user, tokenStatus){
     user.gettoken = tokenStatus;
@@ -79,11 +79,11 @@ export class RestUserService {
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    return this.http.put(this.uri+'updateUserU/'+userToUpdate._id, params, {headers: headers})
+    return this.http.put(this.uri+'updateUser/'+userToUpdate._id, params, {headers: headers})
     .pipe(map(this.extractData))
   }
 
-  updateRole(userToUpdate){
+  /*updateRole(userToUpdate){
     let params = JSON.stringify(userToUpdate);
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -91,14 +91,14 @@ export class RestUserService {
     })
     return this.http.put(this.uri+'updateUserAdmin/'+userToUpdate._id, params, {headers: headers})
     .pipe(map(this.extractData))
-  }
+  }*/
 
   deteleUser(idUser, password){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    return this.http.put(this.uri+'removeUser/'+idUser, {password: password}, {headers: headers})
+    return this.http.put(this.uri+'deleteUser/'+idUser, {password: password}, {headers: headers})
     .pipe(map(this.extractData))
   }
 

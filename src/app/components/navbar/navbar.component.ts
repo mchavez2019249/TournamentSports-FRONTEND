@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit, DoCheck  {
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
-    this.user = localStorage.getItem('user');
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.uri = CONNECTION.URI;
   }
 

@@ -3,7 +3,7 @@
   <div id="cards">
     <h1 class="title">Torneos Registrados</h1>
     <br>
-
+<!--Search button-->
     <form class="form-inline justify-content-center">
     <div class="container h-100">
       <div class="d-flex justify-content-center h-100">
@@ -31,6 +31,9 @@
       <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
+                Delete
+              </button>
         </div>
     </div>
       <!--INICIO SAVE-->
@@ -63,6 +66,28 @@
     </div>
   </div>
   <!--FIN SAVE-->
+
+<!-- MODAL DELETE-->
+<div class="modal fade" id="exampleModalDos" tabindex="-1" aria-labelledby="exampleModalDosLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white d-flex justify-content-center">
+        <h5 class="modal-title" id="exampleModalDosLabel">
+          One click to delete your account!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="mt-5 mb-3 text-muted">Are you shure to delte your account?</span>
+            <h3>This action is irreversible!</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-danger ripple-surface" (click)="deleteLeague()">I'm sure</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
 </div>

@@ -64,12 +64,12 @@ export class RestLeagueService {
     .pipe(map(this.extractData));
   }
 
-  deteleLeague(idLeague, password){
+  deteleLeague(idUser,idLeague){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    return this.http.put(this.uri+'deleteLeague/'+idLeague, {password: password}, {headers: headers})
+    return this.http.delete(this.uri+'deleteLeague/'+idUser+idLeague, {headers: headers})
     .pipe(map(this.extractData))
   }
 

@@ -55,13 +55,13 @@ export class ListTorneosComponent implements OnInit {
   }
 
   deleteLeague(){
-    this.restLeague.deteleLeague(this.league._id, this.possiblePass).subscribe((res:any)=>{
-      if(!res.userRemoved){
+    this.restLeague.deteleLeague(this.user._id, this.league).subscribe((res:any)=>{
+      if(!res.leagueRemoved){
         alert(res.message)
       }else{
         alert(res.message);
         localStorage.clear();
-        this.router.navigateByUrl('login')
+        this.router.navigateByUrl('listLeague')
       }
     },
     error=> alert(error.error.message))

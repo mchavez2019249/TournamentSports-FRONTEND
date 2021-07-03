@@ -4,6 +4,27 @@
  </div>
 
 <div class="body">
+
+  <form class="form-inline justify-content-center">
+    <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input  [(ngModel)]="search" class="search_input" type="search" name="search"  placeholder="Search...">
+          <a href="/listUsers" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="card myWidth text-white" *ngFor="let user of users | search:search">
+    <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
+      <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <h6 class="card-title">{{user.lastname}}</h6>
+          <h6 class="card-title">{{user.username}}</h6>
+          <h6 class="card-title">{{user.phone}}</h6>
+      </div>
+  </div>
     <div id="cards">
         
         <hr>

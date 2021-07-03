@@ -7,6 +7,7 @@ import { RestUserService } from 'src/app/services/restUser/rest-user.service';
 })
 export class ListUsersComponent implements OnInit {
   users:[];
+  search;
 
   constructor(private restUser: RestUserService) { }
 

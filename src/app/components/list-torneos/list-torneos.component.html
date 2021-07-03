@@ -1,36 +1,47 @@
 <app-navbar></app-navbar>
-<div id="cards">
-    <h1 class="text-center">Torneos Registrados</h1>
+<div class="body">
+  <div id="cards">
+    <h1 class="title">Torneos Registrados</h1>
     <br>
-        <form class="form-inline justify-content-center">
-            <div class="form-group">
-                <input [(ngModel)]="search" name="search" class="form-control-lg" type="search" placeholder="Search by name" aria-label="Search">
-            </div>
-        </form>
+
+    <form class="form-inline justify-content-center">
+    <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input  [(ngModel)]="searchLeague" class="search_input" type="search" name="searchLeague"  placeholder="Search...">
+          <a href="/listLeague" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="container">
+    <div class="row">
+      <div class="saveButton">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="../../../assets/img/league.png" width="100rem" height="100rem" alt="">
+            Save league
+          </button>
+      </div>
+    </div>
+  </div>
+
     <hr>
-    <div class="card myWidth text-white bg-secondary" *ngFor="let league of leagues | search:search">
-      <img src="../../../assets/img/soccer-player.png" width="100rem" height="100rem" class="img-fluid" alt=".">
+    <div class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
+      <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
         </div>
     </div>
       <!--INICIO SAVE-->
       <!-- Button trigger modal -->
-      <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Save league
-              </button>
-          </div>
-        </div>
-      </div>
+      
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header bg-primary text-white d-flex justify-content-center">
+        <div class="modal-header bg-warning text-white d-flex justify-content-center">
           <h5 class="modal-title" id="exampleModalLabel">Save a New League</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -43,7 +54,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-                <button type="submit" class="btn btn-primary" [disabled]="!createLeague.form.valid">SAVE</button >
+                <button type="submit" class="btn btn-success" [disabled]="!createLeague.form.valid">SAVE</button >
               </div>
           </form>
           <!-- fin cuerpo-->
@@ -54,3 +65,5 @@
   <!--FIN SAVE-->
 
 </div>
+</div>
+

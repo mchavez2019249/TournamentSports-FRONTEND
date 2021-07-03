@@ -16,7 +16,7 @@ export class ListTorneosComponent implements OnInit {
   public token;
   public leagueLogg;
   leagues:[];
-  search;
+  searchLeague;
   public title;
   public possiblePass;
   public message;

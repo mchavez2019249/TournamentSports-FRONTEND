@@ -16,6 +16,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
+import { SearchLeaguePipe } from './pipes/search-league.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ListTorneosComponent } from './components/list-torneos/list-torneos.com
     NotFoundComponent,
     SearchPipe,
     ListUsersComponent,
-    ListTorneosComponent
+    ListTorneosComponent,
+    SearchLeaguePipe
   ],
   imports: [
     BrowserModule,

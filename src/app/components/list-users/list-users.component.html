@@ -16,19 +16,10 @@
     </div>
   </form>
 
-  <div class="card myWidth text-white" *ngFor="let user of users | search:search">
-    <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
-      <div class="card-body">
-          <h5 class="card-title">{{user.name}}</h5>
-          <h6 class="card-title">{{user.lastname}}</h6>
-          <h6 class="card-title">{{user.username}}</h6>
-          <h6 class="card-title">{{user.phone}}</h6>
-      </div>
-  </div>
     <div id="cards">
         
         <hr>
-        <div class="card myWidth" *ngFor="let user of users">
+        <div class="card myWidth" *ngFor="let user of users | search:search">
             <img src="../../../assets/img/soccer-player.png" width="100rem" height="100rem" class="img-fluid" alt=".">
             <div class="card-body">
               <h5 class="card-title">{{user.name}}</h5>

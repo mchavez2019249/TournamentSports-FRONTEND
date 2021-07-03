@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserComponent } from './components/user/user.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
+import { LeaguesComponent } from './components/leagues/leagues.component';
 
 const routes: Routes = [
   //importacion de componentes
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'user', component: UserComponent},
   {path: 'listUsers', component: ListUsersComponent},
   {path: 'listLeague', component:ListTorneosComponent},
+  {path: 'leagues', component:LeaguesComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

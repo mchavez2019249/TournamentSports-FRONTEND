@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RestLeagueService } from '../../services/restLeague/rest-league.service';
 import { RestUserService } from '../../services/restUser/rest-user.service';
 import { League } from '../../models/league.model';
-import { Router } from '@angular/router';
-import { CONNECTION } from 'src/app/services/global';
 import { fadeIn } from 'src/app/animations/animations';
 @Component({
   selector: 'app-list-torneos',
@@ -12,38 +10,31 @@ import { fadeIn } from 'src/app/animations/animations';
   animations: [fadeIn]
 })
 export class ListTorneosComponent implements OnInit {
-  public league:League;
   public token;
-  public leagueLogg;
   leagues:[];
   searchLeague;
-  public title;
-  public possiblePass;
   public message;
-  public status:boolean;
-  public uri;
   public user;
+  public leagueSelected:League;
 
-  constructor(private restLeague:RestLeagueService, private restUser:RestUserService,private router:Router) {
-    this.title = 'Your League';
-    this.league = new League('','',[],[]);
-    this.token = this.restLeague.getToken();
-    this.leagueLogg = this.restLeague.getLeague();
-    this.possiblePass = '';
-    this.uri = CONNECTION.URI;
-   }
+
+  
+
+  constructor(private restLeague:RestLeagueService, private restUser:RestUserService) {}
 
   ngOnInit(): void {
+    this.leagueSelected = new League('','','',null)
     this.listLeagues();
     this.token = this.restUser.getToken();
     this.user = this.restUser.getUser();
+   
   }
 
   onSubmit(createLeague){
-    this.restLeague.saveLeague(this.user._id, this.league).subscribe((res:any)=>{
+    this.restLeague.saveLeague(this.user._id, this.leagueSelected).subscribe((res:any)=>{
       if(res.savedL){
         alert(res.message);
-        this.league = new League('', '',null, null);
+        this.leagueSelected = new League('', '','', null);
         createLeague.reset();
       }else{
         alert(res.message)
@@ -54,17 +45,22 @@ export class ListTorneosComponent implements OnInit {
     })
   }
 
+  getLeague(league){
+    this.leagueSelected = league;
+    console.log(league._id)
+  }
+
   deleteLeague(){
-    this.restLeague.deteleLeague(this.user._id, this.league).subscribe((res:any)=>{
-      if(!res.leagueRemoved){
-        alert(res.message)
+    this.restLeague.deleteLeague(this.user._id, this.leagueSelected._id).subscribe((res:any)=>{
+      if(res.leagueDelete){
+        alert(res.message);
+        localStorage.setItem('user', JSON.stringify(res.leagueDelete))
+        this.user = this.restUser.getUser()
       }else{
         alert(res.message);
-        localStorage.clear();
-        this.router.navigateByUrl('listLeague')
       }
     },
-    error=> alert(error.error.message))
+    error => alert(error.error.message))
   }
 
   listLeagues(){

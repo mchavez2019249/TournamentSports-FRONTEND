@@ -44,15 +44,7 @@ export class RestLeagueService {
     return this.token;
   }
 
-  getLeague(){
-    let league = JSON.parse(localStorage.getItem('league'));
-    if(league != null || league != undefined){
-      this.league = league;
-    }else{
-      this.league = null;
-    }
-    return this.league;
-  }
+  
 
   saveLeague(idUser,league){
     let headers = new HttpHeaders({
@@ -64,12 +56,12 @@ export class RestLeagueService {
     .pipe(map(this.extractData));
   }
 
-  deteleLeague(idUser,idLeague){
+  deleteLeague(idUser,idLeague){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    return this.http.delete(this.uri+'deleteLeague/'+idUser+idLeague, {headers: headers})
+    return this.http.delete(this.uri+'deleteLeague/'+idUser+'/'+idLeague, {headers: headers})
     .pipe(map(this.extractData))
   }
 

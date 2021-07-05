@@ -53,7 +53,7 @@
           <form  class="form-signin" #createLeague = "ngForm" (ngSubmit) = "onSubmit(createLeague)">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name League</label>
-                <input [(ngModel)]="league.name"  name="name" #name="ngModel" class="form-control" type="text" id="inputName" placeholder="League name" required>
+                <input [(ngModel)]="leagueSelected.name"  name="name" #name="ngModel" class="form-control" type="text" id="inputName" placeholder="League name" required>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
@@ -73,12 +73,12 @@
     <div class="modal-content">
       <div class="modal-header bg-danger text-white d-flex justify-content-center">
         <h5 class="modal-title" id="exampleModalDosLabel">
-          One click to delete your account!</h5>
+          One click to delete your League!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <span class="mt-5 mb-3 text-muted">Are you shure to delte your account?</span>
-            <h3>This action is irreversible!</h3>
+        <span class="mt-5 mb-3 text-muted">Are you shure to delte your league?</span>
+            <h3>{{leagueSelected.name}}</h3>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

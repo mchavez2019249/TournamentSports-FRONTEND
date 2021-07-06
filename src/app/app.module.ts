@@ -17,6 +17,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
 import { SearchLeaguePipe } from './pipes/search-league.pipe';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchLeaguePipe } from './pipes/search-league.pipe';
     SearchPipe,
     ListUsersComponent,
     ListTorneosComponent,
-    SearchLeaguePipe
+    SearchLeaguePipe,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

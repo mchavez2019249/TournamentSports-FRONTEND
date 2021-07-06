@@ -51,11 +51,13 @@ export class ListTorneosComponent implements OnInit {
   }
 
   deleteLeague(){
-    this.restLeague.deleteLeague(this.user._id, this.leagueSelected._id).subscribe((res:any)=>{
+    console.log(this.user._id, this.leagueSelected);
+    this.restLeague.deleteLeague(this.user._id, this.leagueSelected).subscribe((res:any)=>{
       if(res.leagueDelete){
         alert(res.message);
         localStorage.setItem('user', JSON.stringify(res.leagueDelete))
         this.user = this.restUser.getUser()
+        
       }else{
         alert(res.message);
       }
@@ -64,7 +66,7 @@ export class ListTorneosComponent implements OnInit {
   }
 
   listLeagues(){
-    this.restLeague.getLeagues().subscribe((res:any)=>{
+    this.restLeague.getLeagues2(this.user).subscribe((res:any)=>{
       if(res.leagueFind){
         this.leagues = res.leagueFind;
         console.log(this.leagues)

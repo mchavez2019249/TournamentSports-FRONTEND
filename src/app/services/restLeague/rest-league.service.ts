@@ -64,6 +64,7 @@ export class RestLeagueService {
     return this.http.delete(this.uri+'deleteLeague/'+idUser+'/'+idLeague, {headers: headers})
     .pipe(map(this.extractData))
   }
+  
 
   getLeagues(){
     let headers = new HttpHeaders({
@@ -73,4 +74,12 @@ export class RestLeagueService {
     return this.http.get(this.uri+ 'getLeagues', {headers: headers})
     .pipe(map(this.extractData))
   }
+
+  getLeagues2(idUser){
+    
+    return this.http.get(this.uri+ 'listLeagueU/'+idUser)
+    .pipe(map(this.extractData))
+  }
+
 }
+

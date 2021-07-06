@@ -9,7 +9,7 @@
       <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
           <input  [(ngModel)]="searchLeague" class="search_input" type="search" name="searchLeague"  placeholder="Search...">
-          <a href="/listLeague" class="search_icon"><i class="fas fa-search"></i></a>
+          <a href="/listLeagues" class="search_icon"><i class="fas fa-search"></i></a>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
+            <button (click)='getLeague(league._id)' type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
                 Delete
               </button>
         </div>

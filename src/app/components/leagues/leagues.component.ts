@@ -28,11 +28,7 @@ export class LeaguesComponent implements OnInit {
 
   constructor(private restLeague:RestLeagueService, private restUser:RestUserService,private router:Router) {
     this.title = 'Your League';
-    /*this.league = new League('','',[],[]);*/
     this.token = this.restLeague.getToken();
-    /*this.leagueLogg = this.restLeague.getLeague();*/
-    this.possiblePass = '';
-    this.uri = CONNECTION.URI;
    }
 
    ngOnInit(): void {

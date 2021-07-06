@@ -17,7 +17,11 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
 import { SearchLeaguePipe } from './pipes/search-league.pipe';
+<<<<<<< Updated upstream
 import { ResultsComponent } from './components/results/results.component';
+=======
+import { ListMatchComponent } from './components/list-match/list-match.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { ResultsComponent } from './components/results/results.component';
     ListUsersComponent,
     ListTorneosComponent,
     SearchLeaguePipe,
+<<<<<<< Updated upstream
     ResultsComponent
+=======
+    ListMatchComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

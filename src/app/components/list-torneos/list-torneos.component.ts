@@ -67,7 +67,7 @@ export class ListTorneosComponent implements OnInit {
 
   listLeagues(){
     this.restLeague.getLeagues2(this.user).subscribe((res:any)=>{
-      if(res.leagueFind){
+      if(res.leaguefind){
         this.leagues = res.leagueFind;
         console.log(this.leagues)
       }else{

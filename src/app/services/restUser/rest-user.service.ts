@@ -16,6 +16,7 @@ export class RestUserService {
   };
   public token;
   public user;
+
   private extractData(res: Response){
     let body = res;
     return body || [] || {};
@@ -49,6 +50,9 @@ export class RestUserService {
     }
     return this.user;
   }
+
+
+
 
   saveUser(user){
     let params = JSON.stringify(user);
@@ -108,6 +112,25 @@ export class RestUserService {
       'Authorization': this.getToken()
     });
     return this.http.get(this.uri+ '/getUsers', {headers:headers})
+    .pipe(map(this.extractData))
+  }
+
+  deteleUserByAdmin(idUser, idUserDeleted){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    })
+    return this.http.delete(this.uri+'deleteUserByAdmin/'+idUserDeleted+'/'+idUser, {headers: headers})
+    .pipe(map(this.extractData))
+  }
+
+  updateUserByAdmin(idUser, userToUpdate){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    })
+    let params = JSON.stringify(userToUpdate._id);
+    return this.http.put(this.uri+'updateUserByAdmin/'+userToUpdate+'/'+idUser, params, {headers: headers})
     .pipe(map(this.extractData))
   }
 }

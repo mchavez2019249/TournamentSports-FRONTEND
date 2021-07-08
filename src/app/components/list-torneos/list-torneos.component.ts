@@ -27,7 +27,7 @@ export class ListTorneosComponent implements OnInit {
     this.listLeagues();
     this.token = this.restUser.getToken();
     this.user = this.restUser.getUser();
-   
+    
   }
 
   onSubmit(createLeague){
@@ -46,7 +46,7 @@ export class ListTorneosComponent implements OnInit {
   }
 
   getLeague(league){
-    this.leagueSelected = league;
+    this.leagueSelected._id = league;
     console.log(league._id)
   }
 

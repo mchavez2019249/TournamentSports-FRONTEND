@@ -18,16 +18,16 @@ export class ListTorneosComponent implements OnInit {
   public leagueSelected:League;
 
 
-  
+
 
   constructor(private restLeague:RestLeagueService, private restUser:RestUserService) {}
 
   ngOnInit(): void {
     this.leagueSelected = new League('','','',null)
-    this.listLeagues();
-    this.token = this.restUser.getToken();
     this.user = this.restUser.getUser();
-    
+    this.token = this.restUser.getToken();
+    this.listLeagues();
+
   }
 
   onSubmit(createLeague){
@@ -57,7 +57,7 @@ export class ListTorneosComponent implements OnInit {
         alert(res.message);
         localStorage.setItem('user', JSON.stringify(res.leagueDelete))
         this.user = this.restUser.getUser()
-        
+
       }else{
         alert(res.message);
       }
@@ -66,10 +66,12 @@ export class ListTorneosComponent implements OnInit {
   }
 
   listLeagues(){
-    this.restLeague.getLeagues2(this.user).subscribe((res:any)=>{
+    console.log(this.user);
+    this.restLeague.getLeagues2(this.user._id).subscribe((res:any)=>{
+      console.log(res)
       if(res.leaguefind){
-        this.leagues = res.leagueFind;
-        console.log(this.leagues)
+        this.leagues = res.leaguefind;
+
       }else{
         alert(res.message)
       }

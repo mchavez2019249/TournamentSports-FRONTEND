@@ -17,8 +17,9 @@ export class ListUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.userSelected = new User('','','','','','','','')
+    this.user = this.restUser.getUser();
     this.listUsers();
-      this.user = this.restUser.getUser();
+      
   
   }
 
@@ -35,7 +36,7 @@ export class ListUsersComponent implements OnInit {
 
   getUser4(userT){
     this.userSelected = userT;
-   console.log(userT._id)
+   console.log(this.userSelected)
   }
 
   deleteUserAdmin(){
@@ -55,11 +56,12 @@ export class ListUsersComponent implements OnInit {
 
 
   updateuserByAdmin(){
+    delete this.userSelected.password;
+    delete this.userSelected.role;
     console.log(this.user._id, this.userSelected);
     this.restUser.updateUserByAdmin(this.user._id, this.userSelected).subscribe((res:any)=>{
-      if(res.userUp){
+      if(res.userUpdated){
         alert(res.message);
-        localStorage.setItem('user', JSON.stringify(res.userUp))
       }else{
         alert(res.message);
         this.user = this.restUser.getUser();

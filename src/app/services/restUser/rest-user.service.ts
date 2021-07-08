@@ -129,8 +129,8 @@ export class RestUserService {
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    let params = JSON.stringify(userToUpdate._id);
-    return this.http.put(this.uri+'updateUserByAdmin/'+userToUpdate+'/'+idUser, params, {headers: headers})
+    let params = JSON.stringify(userToUpdate);
+    return this.http.put(this.uri+'updateUserByAdmin/'+userToUpdate._id+'/'+idUser, params, {headers: headers})
     .pipe(map(this.extractData))
   }
 }

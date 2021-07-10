@@ -20,6 +20,8 @@ import { SearchLeaguePipe } from './pipes/search-league.pipe';
 import { ResultsComponent } from './components/results/results.component';
 import { ListMatchComponent } from './components/list-match/list-match.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,10 @@ import { ListMatchComponent } from './components/list-match/list-match.component
     ListTorneosComponent,
     SearchLeaguePipe,
     ResultsComponent,
-    ListMatchComponent
+    ListMatchComponent,
+      
+
+
   ],
   imports: [
     BrowserModule,

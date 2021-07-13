@@ -27,7 +27,7 @@
   </div>
 
     <hr>
-    <div class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
+    <div id="trans" class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
       <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
@@ -102,9 +102,9 @@
       </div>
       <div class="modal-body">
         <label for="exampleFormControlInput1" class="form-label">Name Team</label>
-        <input name="name" class="form-control" type="text" id="inputName" placeholder="Team name" required>
+        <input name="name" class="form-control" type="text" id="inputName" placeholder="name team" required>
         <label for="exampleFormControlInput1" class="form-label">add Team</label>
-        <input name="name" class="form-control" type="text" id="inputName" placeholder="add Team" required>
+        <input name="name" class="form-control" type="text" id="inputName" placeholder="name team" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

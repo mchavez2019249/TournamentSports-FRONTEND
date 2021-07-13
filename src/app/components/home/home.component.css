@@ -10,6 +10,11 @@
     border-radius: 20px;
 }
 
+#trans :hover{
+    background-color: rgba(159, 233, 74, 0.534);
+    transition: all 0.5s ease;
+  }
+
 .text-center{
     color: rgb(233, 17, 82);
 }

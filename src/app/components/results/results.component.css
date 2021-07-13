@@ -30,7 +30,7 @@ nav ul li {
 	float: left;
 	width: 500px;
 	text-align: left;
-	border-bottom: 3px solid #2ecc71; 
+	border-bottom: 3px solid #8ce5b2; 
 }
 	
 nav ul li:hover {
@@ -63,7 +63,7 @@ nav ul ul li a {
 }	
 
 nav ul ul li a:hover {
-	background: #47d583;
+	background: #8ce5b2;
 	color: #fff;
 }	
 
@@ -72,7 +72,7 @@ nav ul ul li a:hover {
 	width: 0; 
  	height: 0;
  	margin-top: 10px;
- 	border-top: 10px solid #2ecc71;
+ 	border-top: 10px solid #8ce5b2;
   border-left: 10px solid transparent; 
   border-right: 10px solid transparent; 
 }
@@ -88,3 +88,24 @@ nav ul ul li a:hover {
   -webkit-border-radius: 100%; 
   border-radius: 100%;
 }
+input {
+	width: 50%;
+	max-width: 540px;
+	margin: 0px;
+	margin-left: 480px;
+	border: 6px solid #8ce5b2;
+	border-left: 10px solid transparent; 
+	border-right: 10px solid transparent;
+
+  }
+  .resultimg {
+	width: 8%;
+	max-width: 700px;
+	margin: 0px;
+	margin-left: 600px;
+  }
+  .container1{
+    background-image: url('../../../assets/img/resultF');
+}
+
+

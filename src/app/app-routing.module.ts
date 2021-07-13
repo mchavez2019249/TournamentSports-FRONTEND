@@ -23,8 +23,8 @@ const routes: Routes = [
   {path: 'listLeague', component:ListTorneosComponent},
   {path: 'leagues', component:LeaguesComponent},
   {path: 'result', component: ResultsComponent},
-  {path: '**', component: NotFoundComponent},
-  {path: 'listMatch', component: ListMatchComponent}
+  {path: 'listMatch', component: ListMatchComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

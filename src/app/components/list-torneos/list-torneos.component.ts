@@ -46,8 +46,8 @@ export class ListTorneosComponent implements OnInit {
   }
 
   getLeague(league){
-    this.leagueSelected._id = league;
-    console.log(league._id)
+    this.leagueSelected = league;
+    console.log(league)
   }
 
   deleteLeague(){
@@ -55,9 +55,6 @@ export class ListTorneosComponent implements OnInit {
     this.restLeague.deleteLeague(this.user._id, this.leagueSelected).subscribe((res:any)=>{
       if(res.leagueDelete){
         alert(res.message);
-        localStorage.setItem('user', JSON.stringify(res.leagueDelete))
-        this.user = this.restUser.getUser()
-
       }else{
         alert(res.message);
       }

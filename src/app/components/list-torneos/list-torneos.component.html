@@ -9,26 +9,22 @@
       <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
           <input  [(ngModel)]="searchLeague" class="search_input" type="search" name="searchLeague"  placeholder="Search...">
-          <a href="/listLeagues" class="search_icon"><i class="fas fa-search"></i></a>
+          <a href="/listLeague" class="search_icon"><i class="fas fa-search"></i></a>
         </div>
       </div>
     </div>
   </form>
 
-  <div class="container">
+  <div class="img-fluid">
     <div class="row">
-      <div class="saveButton">
+      <div class="col text-center">
         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <img src="../../../assets/img/league.png" width="100rem" height="100rem" alt="">
-            Save league
-          </button>
+          <h4>SAVE LEAGUE</h4>  
+        </button>
       </div>
     </div>
   </div>
-
-  <button  type="button" class="btn btn-warning">
-    <a href="/result" class="btn btn-primary">results!</a>
-    </button>
 
     <hr>
     <div class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
@@ -38,12 +34,15 @@
             <button (click)='getLeague(league._id)' type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
                 Delete
               </button>
+              <button routerLink="/result" type="button" class="btn btn-secondary" >
+                add result
+              </button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTres">
+                add Team
+              </button>
         </div>
     </div>
-      <!--INICIO SAVE-->
-      <!-- Button trigger modal -->
-      
-  
+  <!--INICIO SAVE-->
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -91,6 +90,31 @@
     </div>
   </div>
 </div>
+<!--FIN DELETE-->
+
+<!--MODAL AÑADIR TEAM A LEAGUE -->
+<div class="modal fade" id="exampleModalTres" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white d-flex justify-content-center">
+        <h5 class="modal-title" id="exampleModalLabel">add a team to the league</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="exampleFormControlInput1" class="form-label">Name Team</label>
+        <input name="name" class="form-control" type="text" id="inputName" placeholder="Team name" required>
+        <label for="exampleFormControlInput1" class="form-label">add Team</label>
+        <input name="name" class="form-control" type="text" id="inputName" placeholder="add Team" required>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--FIN MODAL TEAM/LEAGUE-->
+
 
 
 </div>

@@ -10,6 +10,7 @@ import { ListTorneosComponent } from './components/list-torneos/list-torneos.com
 import { LeaguesComponent } from './components/leagues/leagues.component';
 import { ResultsComponent } from './components/results/results.component';
 import { ListMatchComponent } from './components/list-match/list-match.component';
+import { TeamsComponent } from './components/teams/teams.component';
 
 const routes: Routes = [
   //importacion de componentes
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'leagues', component:LeaguesComponent},
   {path: 'result', component: ResultsComponent},
   {path: 'listMatch', component: ListMatchComponent},
+  {path: 'listTeam', component:TeamsComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

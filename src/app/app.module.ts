@@ -19,6 +19,7 @@ import { ListTorneosComponent } from './components/list-torneos/list-torneos.com
 import { SearchLeaguePipe } from './pipes/search-league.pipe';
 import { ResultsComponent } from './components/results/results.component';
 import { ListMatchComponent } from './components/list-match/list-match.component';
+import { SearchTeamPipe } from './pipes/search-team.pipe';
 
 
 
@@ -39,6 +40,7 @@ import { ListMatchComponent } from './components/list-match/list-match.component
     SearchLeaguePipe,
     ResultsComponent,
     ListMatchComponent,
+    SearchTeamPipe,
       
 
 

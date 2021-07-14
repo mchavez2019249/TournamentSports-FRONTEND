@@ -5,17 +5,23 @@
     
 }
 
+
+
 .myWidth{
-    width: 19rem;
+    width: 15rem;
     display: inline-block;
     margin: 0.5rem;
-    margin-top: 1rem;
-    align-items: center;
+    margin-top: 2rem;
     background-color: rgb(159, 163, 154);
 }
 
+#centrar{
+    margin-left: 4rem;
+}
+
 #botonesCrud{
-    margin: 0.15rem;
+    display: inline-block;
+    margin-left: 1.5rem;
 }
 
 .body{
@@ -80,3 +86,12 @@
     .button{
         text-align: center;
     }
+
+    #cards :hover{
+        background-color: rgba(245, 107, 107, 0.564);
+        transition: all 0.5s ease;
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        -webkit-text-stroke: 0.25px black;
+      }
+
+     

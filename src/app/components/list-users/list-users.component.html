@@ -20,14 +20,14 @@
         
         <hr>
         <div class="card myWidth" *ngFor="let user of users | search:search">
-            <img src="../../../assets/img/soccer-player.png" width="100rem" height="100rem" class="img-fluid" alt=".">
+            <img id="centrar" src="../../../assets/img/soccer-player.png" width="100rem" height="100rem" class="img-responsive" alt=".">
             <div class="card-body">
               <h5 class="card-title">{{user.name}}</h5>
               <p class="card-text">{{user.username}}</p>
-              <button (click)='getUser4(user._id)' type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button id="botonesCrud"(click)='getUser4(user._id)' type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Delete 
               </button>
-              <button (click)='getUser4(user)' type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#exampleModalDos">
+              <button id="botonesCrud" (click)='getUser4(user)' type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#exampleModalDos">
                 Update
               </button>
             </div>
@@ -79,9 +79,9 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">User Name</label>
                 <input [(ngModel)]="userSelected.name"  name="name" #name="ngModel" class="form-control" type="text" id="inputName" placeholder="user name" required>
-                <label for="exampleFormControlInput12" class="form-label">User Name</label>
+                <label for="exampleFormControlInput12" class="form-label">User Lastname</label>
                 <input [(ngModel)]="userSelected.lastname"  name="lastname" #name="ngModel" class="form-control" type="text" id="inputLastname" placeholder="lastname" required>
-                <label for="exampleFormControlInput13" class="form-label">User Name</label>
+                <label for="exampleFormControlInput13" class="form-label">Username</label>
                 <input [(ngModel)]="userSelected.username"  name="username" #name="ngModel" class="form-control" type="text" id="inputUsername" placeholder="username" required>
              
               </div>

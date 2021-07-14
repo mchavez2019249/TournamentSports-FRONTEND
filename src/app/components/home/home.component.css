@@ -66,3 +66,16 @@ border-radius: 20px;
     background-color: rgba(226, 209, 202, 0.486);
     display: flex;
 }
+
+#cardita :hover{
+    background-color: rgba(162, 218, 74, 0.486);
+    transition: all 0.5s ease;
+  }
+
+  img {
+ 
+    transition: all 0.5s ease;
+  
+  }
+
+  img:hover{ transform: scale(0.9);}

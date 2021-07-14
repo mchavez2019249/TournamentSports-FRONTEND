@@ -11,8 +11,8 @@ import { RestUserService } from '../restUser/rest-user.service';
 export class RestTeamService {
 
   public user;
-  public team;
   public token;
+  public team;
   public uri: string;
   public httOptionsAuth = {
     headers: new HttpHeaders({

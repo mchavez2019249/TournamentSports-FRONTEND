@@ -34,8 +34,8 @@
             <button (click)='getLeague(league._id)' type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
                 Delete
               </button>
-              <button routerLink="/result" type="button" class="btn btn-secondary" >
-                add result
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCuatro">
+                add Result
               </button>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTres">
                 add Team
@@ -114,6 +114,54 @@
   </div>
 </div>
 <!--FIN MODAL TEAM/LEAGUE-->
+
+<!--MODAL AÑADIR RESULTADO -->
+<div class="modal fade" id="exampleModalCuatro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white d-flex justify-content-center">
+        <h5 class="modal-title" id="exampleModalLabel">add your result!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!---->
+        <nav>
+          <ul>
+              <li><a>Equipo #1<div id="down-triangle"></div></a>
+                  <select class="form-control col-md-13">
+                      <option value="0" selected></option>
+                  </select>
+              </li>
+          </ul>
+      
+          <div >
+              <ul>
+                  <li><a>Equipo #2<div id="down-triangle"></div></a>
+                      <select class="form-control col-md-13">
+                          <!--<option value="0" selected *ngFor="let team of teams" >{{user.username}}</option>-->
+                      </select>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      
+      <div class="form-row">
+          <div class="form-group col-md-13">
+              <input class="form-control" type="text" id="inputUsername" placeholder="Ingresar cantidad de goles del equipo 1" required>
+          </div>
+          <div class="form-group col-md-13">
+              <input class="form-control" type="text" id="inputUsername" placeholder="Ingresar cantidad de goles del equipo 2" required>
+          </div>
+        <!---->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--FIN MODAL-->
 
 
 

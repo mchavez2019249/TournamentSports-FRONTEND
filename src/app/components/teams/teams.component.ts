@@ -12,18 +12,17 @@ import { fadeIn } from 'src/app/animations/animations';
 })
 export class TeamsComponent implements OnInit {
   public token;
-  public team: Team;
-  public message;
-  public user;
-  public teamSaved: string;
-  public teamSelected: Team;
   teams: [];
   searchTeam;
+  public message;
+  public user;
+  public teamSelected: Team;
+ 
 
   constructor(private restTeam: RestTeamService, private restUser: RestUserService) { }
 
   ngOnInit(): void {
-    this.teamSelected = new Team('', '', '', null, null, null, null, null, [])
+    this.teamSelected = new Team('', '', '', null, null, null, null, null, '')
     this.user = this.restUser.getUser();
     this.token = this.restUser.getToken(); 
     this.listTeams();
@@ -33,7 +32,7 @@ export class TeamsComponent implements OnInit {
     this.restTeam.saveTeam(this.user._id, this.teamSelected).subscribe((res:any)=>{
       if(res.teamSaved){
         alert(res.message);
-        this.teamSelected = new Team('', '', '', null, null, null, null, null, []);
+        this.teamSelected = new Team('', '', '', null, null, null, null, null, '');
         createTeam.reset();
       }else{
         alert(res.message)
@@ -55,7 +54,7 @@ export class TeamsComponent implements OnInit {
       console.log(res)
       if(res.team){
         this.teams = res.team;
-      
+
       }else{
         alert(res.message)
       }

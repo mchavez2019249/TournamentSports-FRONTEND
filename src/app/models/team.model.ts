@@ -8,6 +8,6 @@ export class Team{
         public gc: Number,
         public diference: Number,
         public matches: Number,
-        public admin: [],
+        public admin: String,
     ){}
 }

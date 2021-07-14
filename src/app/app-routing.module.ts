@@ -8,7 +8,7 @@ import { UserComponent } from './components/user/user.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
 import { LeaguesComponent } from './components/leagues/leagues.component';
-import { ResultsComponent } from './components/results/results.component';
+
 import { ListMatchComponent } from './components/list-match/list-match.component';
 import { TeamsComponent } from './components/teams/teams.component';
 
@@ -23,7 +23,6 @@ const routes: Routes = [
   {path: 'listUsers', component: ListUsersComponent},
   {path: 'listLeague', component:ListTorneosComponent},
   {path: 'leagues', component:LeaguesComponent},
-  {path: 'result', component: ResultsComponent},
   {path: 'listMatch', component: ListMatchComponent},
   {path: 'listTeam', component:TeamsComponent},
   {path: '**', component: NotFoundComponent}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RestLeagueService } from '../../services/restLeague/rest-league.service';
 import { RestUserService } from '../../services/restUser/rest-user.service';
+import { RestResultsService } from '../../services/restResults/rest-results.service';
+import { RestTeamService } from 'src/app/services/restTeam/rest-team.service';
 import { League } from '../../models/league.model';
 import { fadeIn } from 'src/app/animations/animations';
 @Component({
@@ -12,22 +14,24 @@ import { fadeIn } from 'src/app/animations/animations';
 export class ListTorneosComponent implements OnInit {
   public token;
   leagues:[];
+  teams:[];
   searchLeague;
   public message;
   public user;
-  public leagueSelected:League;
+  public leagueSelected;
 
 
 
 
-  constructor(private restLeague:RestLeagueService, private restUser:RestUserService) {}
+  constructor(private restLeague:RestLeagueService, private restUser:RestUserService, private restTeam:RestTeamService) {}
 
   ngOnInit(): void {
     this.leagueSelected = new League('','','',null)
     this.user = this.restUser.getUser();
     this.token = this.restUser.getToken();
     this.listLeagues();
-
+    this.listTeams();
+  
   }
 
   onSubmit(createLeague){
@@ -74,6 +78,20 @@ export class ListTorneosComponent implements OnInit {
       }
     },
     error => alert(error.error.message))
+  }
+  
+  listTeams(){
+    console.log(this.leagueSelected);
+    this.restTeam.getTeamsInLeague().subscribe((res:any)=>{
+      console.log(res)
+      if(res.team){
+
+        this.teams= res.team;
+      }else{
+        alert(res.message)
+        console.log('no se pudo')
+      }
+    }, error=> alert(error.error.message));
   }
 
 }

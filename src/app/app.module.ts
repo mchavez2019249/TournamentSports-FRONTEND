@@ -17,7 +17,6 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
 import { SearchLeaguePipe } from './pipes/search-league.pipe';
-import { ResultsComponent } from './components/results/results.component';
 import { ListMatchComponent } from './components/list-match/list-match.component';
 import { SearchTeamPipe } from './pipes/search-team.pipe';
 
@@ -38,7 +37,6 @@ import { SearchTeamPipe } from './pipes/search-team.pipe';
     ListUsersComponent,
     ListTorneosComponent,
     SearchLeaguePipe,
-    ResultsComponent,
     ListMatchComponent,
     SearchTeamPipe,
       

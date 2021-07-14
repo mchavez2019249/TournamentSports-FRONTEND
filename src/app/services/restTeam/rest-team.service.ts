@@ -75,5 +75,15 @@ export class RestTeamService {
     });
     return this.http.get(this.uri+ 'listTeamU/'+idUser, {headers: headers})
     .pipe(map(this.extractData))
+
+  }
+
+  getTeamsInLeague(){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    });
+    return this.http.get(this.uri+'listTeamsInLeague', {headers: headers})
+    .pipe(map(this.extractData))
   }
 }

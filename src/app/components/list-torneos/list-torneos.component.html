@@ -34,10 +34,10 @@
             <button (click)='getLeague(league._id)' type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
                 Delete
               </button>
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCuatro">
+              <button (click)='getLeague(league._id)' type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCuatro">
                 add Result
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTres">
+              <button (click)='getLeague(league._id)' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTres">
                 add Team
               </button>
         </div>
@@ -129,7 +129,7 @@
           <ul>
               <li><a>Equipo #1<div id="down-triangle"></div></a>
                   <select class="form-control col-md-13">
-                      <option value="0" selected></option>
+                      <option value="0" selected *ngFor="let team of teams" >{{team.name}}</option>
                   </select>
               </li>
           </ul>
@@ -138,7 +138,7 @@
               <ul>
                   <li><a>Equipo #2<div id="down-triangle"></div></a>
                       <select class="form-control col-md-13">
-                          <!--<option value="0" selected *ngFor="let team of teams" >{{user.username}}</option>-->
+                          <option *ngFor="let team of teams" >{{team.name}}</option>
                       </select>
                   </li>
               </ul>
@@ -167,4 +167,3 @@
 
 </div>
 </div>
-

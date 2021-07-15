@@ -20,6 +20,7 @@ import { SearchLeaguePipe } from './pipes/search-league.pipe';
 import { ListMatchComponent } from './components/list-match/list-match.component';
 import { SearchTeamPipe } from './pipes/search-team.pipe';
 import { GraphicsComponent } from './components/graphics/graphics.component';
+import { ChartsModule } from '@rinminase/ng-charts';
 
 
 
@@ -41,9 +42,8 @@ import { GraphicsComponent } from './components/graphics/graphics.component';
     ListMatchComponent,
     SearchTeamPipe,
     GraphicsComponent,
-      
-
-
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -51,6 +51,9 @@ import { GraphicsComponent } from './components/graphics/graphics.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ChartsModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

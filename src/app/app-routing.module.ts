@@ -8,7 +8,6 @@ import { UserComponent } from './components/user/user.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListTorneosComponent } from './components/list-torneos/list-torneos.component';
 import { LeaguesComponent } from './components/leagues/leagues.component';
-
 import { ListMatchComponent } from './components/list-match/list-match.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { GraphicsComponent } from './components/graphics/graphics.component';

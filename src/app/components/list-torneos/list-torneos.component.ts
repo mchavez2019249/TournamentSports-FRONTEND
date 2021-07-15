@@ -33,6 +33,7 @@ export class ListTorneosComponent implements OnInit {
     this.teamSelected = new Team('', '', '', null, null, null, null, null, '')
     this.user = this.restUser.getUser();
     this.token = this.restUser.getToken();
+   this.listTeams();
     this.listLeagues();
 
   
@@ -86,12 +87,12 @@ export class ListTorneosComponent implements OnInit {
   
   listTeams(){
     console.log(this.leagueSelected, this.teams);
-    this.restTeam.getTeamsInLeague(this.leagueSelected).subscribe((res:any)=>{
+    this.restTeam.getTeamsInLeague().subscribe((res:any)=>{
       console.log(res)
       if(res.team){
         alert(res.message)
-        this.teams= res.team;
-        console.log(res.team);
+        this.teams=res.team,
+        console.log(this.teams);
       }else{
         alert(res.message)
         console.log('no se pudo')
@@ -116,5 +117,9 @@ export class ListTorneosComponent implements OnInit {
     error=> console.log(<any>error)
     )
   }
+
+
+
+
 
 }

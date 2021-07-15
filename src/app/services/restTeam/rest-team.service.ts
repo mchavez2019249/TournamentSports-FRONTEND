@@ -78,12 +78,21 @@ export class RestTeamService {
 
   }
 
-  getTeamsInLeague(idLeague){
+  getTeamsInLeague(){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     });
-    return this.http.get(this.uri+'listTeamsInLeague/'+idLeague, {headers: headers})
+    return this.http.get(this.uri+'listTeamsInLeague', {headers: headers})
+    .pipe(map(this.extractData))
+  }
+
+  saveMatch(idUsuario, idLeague, idEquipo1, idEquipo2){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    });
+    return this.http.post(this.uri+'saveMatch/'+idUsuario+'/'+idLeague+'/'+idEquipo1+'/'+idEquipo2, {headers: headers})
     .pipe(map(this.extractData))
   }
 

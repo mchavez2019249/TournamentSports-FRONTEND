@@ -11,6 +11,7 @@ import { LeaguesComponent } from './components/leagues/leagues.component';
 
 import { ListMatchComponent } from './components/list-match/list-match.component';
 import { TeamsComponent } from './components/teams/teams.component';
+import { GraphicsComponent } from './components/graphics/graphics.component';
 
 const routes: Routes = [
   //importacion de componentes
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'leagues', component:LeaguesComponent},
   {path: 'listMatch', component: ListMatchComponent},
   {path: 'listTeam', component:TeamsComponent},
+  {path: 'graphics', component:GraphicsComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

@@ -4,6 +4,7 @@ import { RestUserService } from '../../services/restUser/rest-user.service';
 import { RestResultsService } from '../../services/restResults/rest-results.service';
 import { RestTeamService } from 'src/app/services/restTeam/rest-team.service';
 import { League } from '../../models/league.model';
+import { Team } from '../../models/team.model';
 import { fadeIn } from 'src/app/animations/animations';
 @Component({
   selector: 'app-list-torneos',
@@ -19,6 +20,8 @@ export class ListTorneosComponent implements OnInit {
   public message;
   public user;
   public leagueSelected;
+  public teamSelected;
+  public teamSaved: string;
 
 
 
@@ -27,10 +30,11 @@ export class ListTorneosComponent implements OnInit {
 
   ngOnInit(): void {
     this.leagueSelected = new League('','','',null)
+    this.teamSelected = new Team('', '', '', null, null, null, null, null, '')
     this.user = this.restUser.getUser();
     this.token = this.restUser.getToken();
     this.listLeagues();
-    this.listTeams();
+
   
   }
 
@@ -81,17 +85,36 @@ export class ListTorneosComponent implements OnInit {
   }
   
   listTeams(){
-    console.log(this.leagueSelected);
-    this.restTeam.getTeamsInLeague().subscribe((res:any)=>{
+    console.log(this.leagueSelected, this.teams);
+    this.restTeam.getTeamsInLeague(this.leagueSelected).subscribe((res:any)=>{
       console.log(res)
       if(res.team){
-
+        alert(res.message)
         this.teams= res.team;
+        console.log(res.team);
       }else{
         alert(res.message)
         console.log('no se pudo')
       }
     }, error=> alert(error.error.message));
+  }
+
+
+  saveTeam(){
+    console.log(this.user);
+    this.restTeam.saveTeam(this.user._id, this.teamSelected, this.leagueSelected).subscribe((res:any)=>{
+      this.message = res.message;
+      if(res.pushTeam){
+        this.teamSaved = res.pushTeam.name;
+        alert(res.message);
+        //console.log(this.user)
+      }else{
+        console.log(this.message);
+        alert(res.message);
+      }
+    },
+    error=> console.log(<any>error)
+    )
   }
 
 }

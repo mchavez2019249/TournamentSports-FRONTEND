@@ -102,13 +102,11 @@
       </div>
       <div class="modal-body">
         <label for="exampleFormControlInput1" class="form-label">Name Team</label>
-        <input name="name" class="form-control" type="text" id="inputName" placeholder="name team" required>
-        <label for="exampleFormControlInput1" class="form-label">add Team</label>
-        <input name="name" class="form-control" type="text" id="inputName" placeholder="name team" required>
+        <input [(ngModel)]="teamSelected.name" name="name" class="form-control" type="text" id="inputName" placeholder="name team" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary"(click)="saveTeam()">Save</button>
       </div>
     </div>
   </div>

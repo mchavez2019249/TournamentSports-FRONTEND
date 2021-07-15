@@ -40,13 +40,13 @@ export class RestTeamService {
     return this.token;
   }
 
-  saveTeam(idUser, team){
+  saveTeam(idUser, team, league){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
     let params = JSON.stringify(team);
-    return this.http.post(this.uri+'saveTeam/'+idUser, params, {headers: headers})
+    return this.http.post(this.uri+'saveTeam/'+idUser+'/'+league, params, {headers: headers})
     .pipe(map(this.extractData));
   }
 
@@ -78,12 +78,14 @@ export class RestTeamService {
 
   }
 
-  getTeamsInLeague(){
+  getTeamsInLeague(idLeague){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     });
-    return this.http.get(this.uri+'listTeamsInLeague', {headers: headers})
+    return this.http.get(this.uri+'listTeamsInLeague/'+idLeague, {headers: headers})
     .pipe(map(this.extractData))
   }
+
+
 }

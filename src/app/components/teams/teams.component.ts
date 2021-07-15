@@ -28,8 +28,8 @@ export class TeamsComponent implements OnInit {
     this.listTeams();
   }
 
-  onSubmit(createTeam){
-    this.restTeam.saveTeam(this.user._id, this.teamSelected).subscribe((res:any)=>{
+ /* onSubmit(createTeam){
+   // this.restTeam.saveTeam(this.user._id, this.teamSelected).subscribe((res:any)=>{
       if(res.teamSaved){
         alert(res.message);
         this.teamSelected = new Team('', '', '', null, null, null, null, null, '');
@@ -41,7 +41,7 @@ export class TeamsComponent implements OnInit {
         console.log(<any>error);
       }
     })
-  }
+  }*/
 
   getTeam(team){
     this.teamSelected = team;

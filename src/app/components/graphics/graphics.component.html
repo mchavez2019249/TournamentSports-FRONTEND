@@ -1,10 +1,16 @@
-  <div>
-    <canvas
-      baseChart
-      chartType="doughnut"
-      [data]="doughnutChartData"
-      [labels]="doughnutChartLabels"
-      [options]="chartOptions"
-      [legend]="true">
-      </canvas>
-  </div>
+<app-navbar></app-navbar>
+<div class="container1">
+
+<h1 class="title">ESTADÍSTICA DE TORNEOS</h1>
+
+<div style="display: block;">
+  <canvas baseChart
+    chartType="pie"
+    [data]="chartData"
+    [colors]="chartColors"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [plugins]="chartPlugins"
+    [legend]="chartLegend">
+  </canvas>
+</div>

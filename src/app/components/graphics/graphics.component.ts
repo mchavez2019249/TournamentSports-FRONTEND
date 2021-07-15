@@ -6,16 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./graphics.component.css']
 })
 export class GraphicsComponent implements OnInit {
-
-  public doughnutChartLabels: string[] = [this.dateForamt(new Date()), 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData: number[] = [350, 450, 100];
   chartOptions = {
-    responsive: true
+    responsive: true,
   };
-
-  dateForamt(date: Date) {
-    return `${date.getFullYear()}-${date.getMonth() - 1}-${date.getDate()}\n ${date.getHours()}:${date.getMinutes()} `;
-  }  constructor() { }
+  chartLabels = [['Equipo#1'], ['Equipo#2'], 'Equipo#3'];
+  chartData = [300, 250, 100];
+  chartColors = [{
+    backgroundColor: ['#03A9F4', '#8BC34A', '#FFC107'],
+    borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF']
+  }];
+  chartLegend = true;
+  chartPlugins = [];
+    constructor() { }
 
   ngOnInit(): void {
   }

@@ -28,3 +28,25 @@
           </div>
     </div>
   </div>
+
+  <!-- MODAL DELETE-->
+<div class="modal fade" id="exampleModalDos" tabindex="-1" aria-labelledby="exampleModalDosLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white d-flex justify-content-center">
+        <h5 class="modal-title" id="exampleModalDosLabel">
+          One click to delete your Team!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="mt-5 mb-3 text-muted">Are you shure to delte your Team?</span>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-danger ripple-surface" (click)="deleteTeam()">I'm sure</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--FIN DELETE-->

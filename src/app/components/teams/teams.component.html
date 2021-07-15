@@ -18,10 +18,10 @@
         <br>
         <!--CARD de TEAM-->
         <div class="card myWidth text-white" *ngFor="let team of teams | searchTeam:searchTeam">
-            <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
+            <img src="../../../assets/img/equipo-de-futbol.png" width="100rem" height="100rem" class="img-fluid" alt=".">
               <div class="card-body">
                   <h5 class="card-title">{{team.name}}</h5>
-                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
+                  <button (click)='getTeam(team._id)' type="button" class="btn btn-danger  btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
                       Delete
                     </button>
               </div>

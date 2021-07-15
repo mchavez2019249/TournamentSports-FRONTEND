@@ -18,14 +18,14 @@
 
 
     <hr>
-    <div class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
+    <div  [@fadeIn] class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
       <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
-            <a href="/listMatch" class="btn btn-primary">
-                Ver
-            </a>
         </div>
+        <a href="/listMatch" class="btn btn-outline-warning  btn-lg btn-block">
+          Ver
+      </a>
     </div>
 </div>
 </div>

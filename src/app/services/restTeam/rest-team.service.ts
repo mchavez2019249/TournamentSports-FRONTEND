@@ -50,12 +50,12 @@ export class RestTeamService {
     .pipe(map(this.extractData));
   }
 
-  deleteTeam(idUser, idTeam, idLeague){
+  deleteTeam(idUser, idTeam){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    return this.http.delete(this.uri+'deleteTeam/'+idUser+'/'+idTeam+'/'+idLeague, {headers: headers})
+    return this.http.delete(this.uri+'deleteTeam/'+idUser+'/'+idTeam, {headers: headers})
     .pipe(map(this.extractData))
   }
 

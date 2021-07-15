@@ -18,7 +18,7 @@
   <div class="img-fluid">
     <div class="row">
       <div class="col text-center">
-        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <img src="../../../assets/img/league.png" width="100rem" height="100rem" alt="">
           <h4>SAVE LEAGUE</h4>  
         </button>
@@ -27,20 +27,20 @@
   </div>
 
     <hr>
-    <div id="trans" class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
+    <div  [@fadeIn] id="trans" class="card myWidth text-white" *ngFor="let league of leagues | searchLeague:searchLeague">
       <img src="../../../assets/img/soccer-ball.png" width="100rem" height="100rem" class="img-fluid" alt=".">
         <div class="card-body">
             <h5 class="card-title">{{league.name}}</h5>
-            <button (click)='getLeague(league._id)' type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
-                Delete
-              </button>
-              <button (click)='getLeague(league._id)' type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCuatro">
+              <button (click)='getLeague(league._id)' type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCuatro">
                 add Result
               </button>
-              <button (click)='getLeague(league._id)' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTres">
+              <button (click)='getLeague(league._id)' type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTres">
                 add Team
               </button>
         </div>
+        <button (click)='getLeague(league._id)' type="button" class="btn btn-danger  btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
+          Delete
+        </button>
     </div>
   <!--INICIO SAVE-->
   <!-- Modal -->
